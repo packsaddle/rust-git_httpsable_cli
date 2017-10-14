@@ -31,3 +31,4 @@ repository = "packsaddle/rust-git_httpsable_clone_cli"
 repository = "packsaddle/rust-git_httpsable_clone_cli"
 
 [dependencies]
+git2 = "0.6.8"
