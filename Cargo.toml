@@ -1,6 +1,6 @@
 [package]
 name = "git_httpsable_clone_cli"
-version = "0.1.0"
+version = "0.0.1"
 authors = ["Sanemat <o.gata.ken@gmail.com>"]
 categories = [
     "command-line-interface",
@@ -21,7 +21,6 @@ keywords = [
 ]
 license = "MIT/Apache-2.0"
 repository = "https://github.com/packsaddle/rust-git_httpsable_clone_cli/"
-version = "1.1.0"
 
 [[bin]]
 name = "git-httpsable-clone"
