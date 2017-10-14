@@ -20,7 +20,9 @@ matrix:
   include:
     # Linux
 #    - env: TARGET=i686-unknown-linux-gnu
-    - env: TARGET=i686-unknown-linux-musl
+# FIXME: failed to run custom build command for `openssl-sys v0.9.19`
+# https://travis-ci.org/packsaddle/rust-git_httpsable_clone_cli/jobs/287925776
+#    - env: TARGET=i686-unknown-linux-musl
 #    - env: TARGET=x86_64-unknown-linux-gnu
     - env: TARGET=x86_64-unknown-linux-musl
 
@@ -53,6 +55,12 @@ matrix:
 #    - env: TARGET=x86_64-apple-darwin
 #      os: osx
 #      rust: nightly
+
+addons:
+  apt:
+    packages:
+      - cmake
+      - libssl-dev
 
 before_install:
   - set -e

@@ -1,6 +1,4 @@
 [package]
-name = "git_httpsable_clone_cli"
-version = "0.0.1"
 authors = ["Sanemat <o.gata.ken@gmail.com>"]
 categories = [
     "command-line-interface",
@@ -16,11 +14,11 @@ include = [
     "license-apache",
     "license-mit",
 ]
-keywords = [
-    "git",
-]
+keywords = ["git"]
 license = "MIT/Apache-2.0"
+name = "git_httpsable_clone_cli"
 repository = "https://github.com/packsaddle/rust-git_httpsable_clone_cli/"
+version = "0.0.1"
 
 [[bin]]
 name = "git-httpsable-clone"
@@ -33,3 +31,4 @@ repository = "packsaddle/rust-git_httpsable_clone_cli"
 repository = "packsaddle/rust-git_httpsable_clone_cli"
 
 [dependencies]
+git2 = "0.6.8"
