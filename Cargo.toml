@@ -2,5 +2,35 @@
 name = "git_httpsable_clone_cli"
 version = "0.1.0"
 authors = ["Sanemat <o.gata.ken@gmail.com>"]
+categories = [
+    "command-line-interface",
+    "command-line-utilities",
+    "development-tools",
+]
+description = "git clone via https."
+include = [
+    "src/**/*",
+    "Cargo.toml",
+    "changelog.md",
+    "readme.md",
+    "license-apache",
+    "license-mit",
+]
+keywords = [
+    "git",
+]
+license = "MIT/Apache-2.0"
+repository = "https://github.com/packsaddle/rust-git_httpsable_clone_cli/"
+version = "1.1.0"
+
+[[bin]]
+name = "git-httpsable-clone"
+path = "src/main.rs"
+[badges.appveyor]
+project_name = "sanemat/rust-git_httpsable_clone_cli"
+repository = "packsaddle/rust-git_httpsable_clone_cli"
+
+[badges.travis-ci]
+repository = "packsaddle/rust-git_httpsable_clone_cli"
 
 [dependencies]
