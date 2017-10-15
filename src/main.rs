@@ -20,6 +20,5 @@ fn main() {
         .spawn()
         .expect("git command failed to start");
     let ecode = child.wait().expect("failed to wait on child");
-
-    assert!(ecode.success());
+    std::process::exit(ecode.code().unwrap());
 }
