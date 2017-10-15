@@ -1,5 +1,6 @@
 use std::env;
 use std::process::{Command, Stdio};
+use std::error::Error;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -21,4 +22,22 @@ fn main() {
         .expect("git command failed to start");
     let ecode = child.wait().expect("failed to wait on child");
     std::process::exit(ecode.code().unwrap());
+}
+
+pub fn adjust(https_url: &str, username: &str, password: &str) -> Result<String, Box<Error>> {
+    Ok(https_url.to_string())
+}
+
+#[cfg(test)]
+mod test {
+    use super::*;
+
+    #[test]
+    fn adjust_both() {
+        let https_url = "https://example.com/foo";
+        let username = "username";
+        let password = "password";
+        let expected = "https://username:password@example.com/foo".to_string();
+        assert_eq!(adjust(https_url, username, password).unwrap(), expected);
+    }
 }
