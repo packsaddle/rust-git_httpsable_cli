@@ -1,6 +1,9 @@
+extern crate url;
+
 use std::env;
 use std::process::{Command, Stdio};
 use std::error::Error;
+use url::Url;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -25,7 +28,10 @@ fn main() {
 }
 
 pub fn adjust(https_url: &str, username: &str, password: &str) -> Result<String, Box<Error>> {
-    Ok(https_url.to_string())
+    let mut parsed = Url::parse(https_url)?;
+    parsed.set_username(username).expect("failed to set username");
+    parsed.set_password(Some(password)).expect("failed to set password");
+    Ok(parsed.as_str().to_string())
 }
 
 #[cfg(test)]
@@ -37,7 +43,7 @@ mod test {
         let https_url = "https://example.com/foo";
         let username = "username";
         let password = "password";
-        let expected = "https://username:password@example.com/foo".to_string();
+        let expected = "https://username:password@example.com/foo";
         assert_eq!(adjust(https_url, username, password).unwrap(), expected);
     }
 }
