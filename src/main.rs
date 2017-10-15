@@ -5,11 +5,11 @@ fn main() {
     let args: Vec<String> = env::args().collect();
     let username = match env::var("GIT_HTTPSABLE_USERNAME") {
         Ok(result) => result,
-        Err(_) => panic!("GIT_HTTPSABLE_USERNAME is required.")
+        Err(_) => panic!("GIT_HTTPSABLE_USERNAME is required."),
     };
     let password = match env::var("GIT_HTTPSABLE_PASSWORD") {
         Ok(result) => result,
-        Err(_) => panic!("GIT_HTTPSABLE_PASSWORD is required.")
+        Err(_) => panic!("GIT_HTTPSABLE_PASSWORD is required."),
     };
     let repo_url = "https://github.com/packsaddle/example-circle_ci-pull_request.git";
     let target_dir = "./for_target_dir";
