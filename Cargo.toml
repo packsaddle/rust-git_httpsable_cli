@@ -5,7 +5,7 @@ categories = [
     "command-line-utilities",
     "development-tools",
 ]
-description = "git clone via https."
+description = "git via https."
 include = [
     "src/**/*",
     "Cargo.toml",
@@ -16,19 +16,19 @@ include = [
 ]
 keywords = ["git"]
 license = "MIT/Apache-2.0"
-name = "git_httpsable_clone_cli"
-repository = "https://github.com/packsaddle/rust-git_httpsable_clone_cli/"
+name = "git_httpsable_cli"
+repository = "https://github.com/packsaddle/rust-git_httpsable_cli/"
 version = "0.0.1"
 
 [[bin]]
-name = "git-httpsable-clone"
+name = "git-httpsable"
 path = "src/main.rs"
 [badges.appveyor]
-project_name = "sanemat/rust-git_httpsable_clone_cli"
-repository = "packsaddle/rust-git_httpsable_clone_cli"
+project_name = "sanemat/rust-git-httpsable-cli"
+repository = "packsaddle/rust-git_httpsable_cli"
 
 [badges.travis-ci]
-repository = "packsaddle/rust-git_httpsable_clone_cli"
+repository = "packsaddle/rust-git_httpsable_cli"
 
 [dependencies]
 url = "1.5.1"
