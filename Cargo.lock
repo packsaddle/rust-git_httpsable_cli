@@ -1,5 +1,5 @@
 [root]
-name = "git_httpsable_clone_cli"
+name = "git_httpsable_cli"
 version = "0.0.1"
 dependencies = [
  "url 1.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
