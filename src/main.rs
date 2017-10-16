@@ -15,11 +15,11 @@ fn main() {
         Ok(result) => result,
         Err(_) => panic!("GIT_HTTPSABLE_PASSWORD is required."),
     };
-    let repo_url = "https://github.com/packsaddle/example-circle_ci-pull_request.git";
-    let target_dir = "./for_target_dir";
-    //    git httpsable clone --depth=1
     let mut child = Command::new("git")
-        .args(&["clone", "--depth", "1", repo_url, target_dir])
+        .args(&args[1..]
+            .into_iter()
+            .map(|input| filter_schema(&input, &username, &password))
+            .collect::<Vec<_>>())
         .stderr(Stdio::null())
         .spawn()
         .expect("git command failed to start");
@@ -27,10 +27,22 @@ fn main() {
     std::process::exit(ecode.code().unwrap());
 }
 
-pub fn adjust(https_url: &str, username: &str, password: &str) -> Result<String, Box<Error>> {
-    let mut parsed = Url::parse(https_url)?;
-    parsed.set_username(username).expect("failed to set username");
-    parsed.set_password(Some(password)).expect("failed to set password");
+pub fn filter_schema(input: &str, username: &str, password: &str) -> String {
+    if input.starts_with("https://") || input.starts_with("http://") {
+        adjust(input, username, password).unwrap()
+    } else {
+        input.to_string()
+    }
+}
+
+pub fn adjust(schema_url: &str, username: &str, password: &str) -> Result<String, Box<Error>> {
+    let mut parsed = Url::parse(schema_url)?;
+    parsed.set_username(username).expect(
+        "failed to set username",
+    );
+    parsed.set_password(Some(password)).expect(
+        "failed to set password",
+    );
     Ok(parsed.as_str().to_string())
 }
 
