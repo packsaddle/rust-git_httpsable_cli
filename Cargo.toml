@@ -31,4 +31,4 @@ repository = "packsaddle/rust-git_httpsable_cli"
 repository = "packsaddle/rust-git_httpsable_cli"
 
 [dependencies]
-url = "1.5.1"
+git_httpsable = { path = "../rust-git_httpsable" }

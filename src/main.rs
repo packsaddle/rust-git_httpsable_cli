@@ -1,7 +1,6 @@
-extern crate url;
+extern crate git_httpsable;
 
 use std::env;
-mod git_httpsable;
 
 fn main() {
     let args: Vec<String> = env::args().collect();

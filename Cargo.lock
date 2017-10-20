@@ -2,6 +2,13 @@
 name = "git_httpsable_cli"
 version = "0.2.0"
 dependencies = [
+ "git_httpsable 0.0.1",
+]
+
+[[package]]
+name = "git_httpsable"
+version = "0.0.1"
+dependencies = [
  "url 1.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
