@@ -2,8 +2,8 @@ use std::error::Error;
 use url::Url;
 use std::process::{Command, Stdio, Child};
 
-pub fn run(items: &[String], username: &str, password: &str) -> Result<Child, ::std::io::Error> {
-    Command::new("git")
+pub fn run(items: &[String], username: &str, password: &str) -> Result<Child, Box<Error>> {
+    match Command::new("git")
         .args(
             items
                 .iter()
@@ -11,7 +11,10 @@ pub fn run(items: &[String], username: &str, password: &str) -> Result<Child, ::
                 .collect::<Vec<_>>(),
         )
         .stderr(Stdio::null())
-        .spawn()
+        .spawn() {
+        Ok(t) => Ok(t),
+        Err(err) => Err(Box::new(err)),
+    }
 }
 
 pub fn filter_schema(input: &str, username: &str, password: &str) -> String {
