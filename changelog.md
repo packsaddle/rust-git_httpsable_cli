@@ -1,3 +1,10 @@
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/packsaddle/rust-git_httpsable_cli/compare/v0.2.0...v0.3.0) (2017-10-21)
+
+* Use external crate
+* Update dependencies
+* Set readme up
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/packsaddle/rust-git_httpsable_cli/compare/v0.1.1...v0.2.0) (2017-10-20)
 
