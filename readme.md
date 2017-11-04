@@ -6,7 +6,7 @@
 
 `git push` to https-url with access token.
 
-See [github_httpsable_cli](https://github.com/packsaddle/rust-github_httpsable_cli) for GitHub speficic version.
+See [github_httpsable_cli](https://github.com/packsaddle/rust-github_httpsable_cli) for GitHub specific version.
 See [git_httpsable](https://github.com/packsaddle/rust-git_httpsable) for the programmatic API.
 
 ## Example
