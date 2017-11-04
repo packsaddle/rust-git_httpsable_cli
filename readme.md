@@ -23,6 +23,9 @@ $ GIT_HTTPSABLE_USERNAME=__your_user_name__ GIT_HTTPSABLE_PASSWORD=__your_passwo
 # => git push https://__your_user_name__:__your_password__@example.com/git/repo your_branch
 ```
 
+- GitHub: `GIT_HTTPSABLE_USERNAME=__your_access_token__`, `GIT_HTTPSABLE_PASSWORD=x-oauth-user`
+- BitBucket: `GIT_HTTPSABLE_USERNAME=x-token-auth`, `GIT_HTTPSABLE_PASSWORD=__your_access_token__`
+
 ## Install
 
 Download from [Latest release](https://github.com/packsaddle/rust-git_httpsable_cli/releases/latest) for your own environment.
